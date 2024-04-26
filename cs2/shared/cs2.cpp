@@ -17,32 +17,31 @@ namespace cs2
 	}
 	namespace offsets
 	{
-		//struct was gifted by glock
-		struct globalvars_t
-		{
-
-						float real_time;
-						DWORD frame_count;
-						uint8_t padding_0[0x8];
-						DWORD max_clients;
-						float interval_per_tick;
-						uint8_t padding_1[0x14];
-						float current_time;
-						float current_time_2;
-						uint8_t padding_2[0xC];
-						DWORD tick_count;
-						float interval_per_tick_2;
-						uint8_t padding_3[0x138];
-						QWORD current_map;
-						QWORD current_map_name;
-		};
+		///struct was gifted by glock
+    struct globalvars_t
+    {
+        float real_time;
+        DWORD frame_count;
+        uint8_t padding_0[0x8];
+        DWORD max_clients;
+        float interval_per_tick;
+        uint8_t padding_1[0x14];
+        float current_time;
+        float current_time_2;
+        uint8_t padding_2[0xC];
+        DWORD tick_count;
+        float interval_per_tick_2;
+        uint8_t padding_3[0x138];
+        QWORD current_map;
+        QWORD current_map_name;
+	};
 
 		//offsets from a2x dumper but i could probably add it in later
 		DWORD m_bBombPlanted = 0x9DD;				// bool
 		DWORD m_bBombDropped = 0x9DC;				// bool
-		DWORD dwGameRules = 0x191EC40;				//pointer
+		DWORD dwGameRules = 0x1923370;				//pointer
 
-		DWORD dwGlobalVars = 0x1729B80;				//pointer
+		DWORD dwGlobalVars = 0x172DD60;				//pointer
 
 		QWORD game_rules;
 		QWORD global_vars;
