@@ -39,9 +39,9 @@ namespace cs2
 		//offsets from a2x dumper but i could probably add it in later
 		DWORD m_bBombPlanted = 0x9DD;				// bool
 		DWORD m_bBombDropped = 0x9DC;				// bool
-		DWORD dwGameRules = 0x1923370;				//pointer
+		DWORD dwGameRules = 0x3736448;				//pointer
 
-		DWORD dwGlobalVars = 0x172DD60;				//pointer
+		DWORD dwGlobalVars = 0x356B9D0;				//pointer
 
 		QWORD game_rules;
 		QWORD global_vars;
@@ -658,7 +658,7 @@ static BOOL cs2::initialize(void)
 	JZ(netvars::m_modelState, E1);
 	JZ(netvars::m_aimPunchCache, E1);
 	JZ(netvars::m_iShotsFired, E1);
-	JZ(netvars::m_angEyeAngles, E1);
+	//JZ(netvars::m_angEyeAngles, E1);
 	JZ(netvars::m_iIDEntIndex, E1);
 	JZ(netvars::m_vOldOrigin, E1);
 	return 1;
