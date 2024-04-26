@@ -20,20 +20,21 @@ namespace cs2
 		//struct was gifted by glock
 		struct globalvars_t
 		{
-			float real_time;
-			DWORD frame_count;
-			UINT8 padding_0[0x8];
-			DWORD max_clients;
-			float interval_per_tick;
-			UINT8 padding_1[0x14];
-			float current_time;
-			float current_time_2;
-			UINT8 padding_2[0xC];
-			DWORD tick_count;
-			float interval_per_tick_2;
-			UINT8 padding_3[0x138];
-			QWORD current_map;
-			QWORD current_map_name;
+
+						float real_time;
+						DWORD frame_count;
+						uint8_t padding_0[0x8];
+						DWORD max_clients;
+						float interval_per_tick;
+						uint8_t padding_1[0x14];
+						float current_time;
+						float current_time_2;
+						uint8_t padding_2[0xC];
+						DWORD tick_count;
+						float interval_per_tick_2;
+						uint8_t padding_3[0x138];
+						QWORD current_map;
+						QWORD current_map_name;
 		};
 
 		//offsets from a2x dumper but i could probably add it in later

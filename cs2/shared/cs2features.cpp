@@ -197,23 +197,27 @@ inline void cs2::features::update_settings(void)
 		config::aimbot_smooth     = 0.01f;
 		break;
 	case 254:
+		config::triggerbot_visible_check = 1;
 		config::aimbot_visible_check = 1;
-		config::bhop = 1;
-		config::trigger_aim	  = 1;
+		config::bhop = 0;
+		config::trigger_aim	  = 0;
 		config::aimbot_button     = 317;
 		config::triggerbot_button = 82;
-		config::aimbot_fov        = 4.0f;
-		config::aimbot_smooth     = 3.5f;
+		config::aimbot_fov        = 3.0f;
+		config::aimbot_smooth     = 3.0f;
+		config::visuals_enabled   = 0;
+		config::visualize_hitbox  = 0;
+
 		break;
 	case 255:
-		config::triggerbot_visible_check = 0;
+		config::triggerbot_visible_check = 1;
 		config::aimbot_visible_check = 1;
 		config::bhop = 1;
 		config::trigger_aim	  = 0;
 		config::aimbot_button     = 317;
 		config::triggerbot_button = 82;
-		config::aimbot_fov        = 3.5f;
-		config::aimbot_smooth     = 4.0f;
+		config::aimbot_fov        = 3.0f;
+		config::aimbot_smooth     = 3.0f;
 		config::visuals_enabled   = 1;
 		config::visualize_hitbox  = 1;
 		break;
@@ -425,7 +429,7 @@ void cs2::features::run(void)
 		int y = (int)screen_size.y - 8;
 
 #ifdef __linux__
-		client::DrawfillRect((void*)0, 0, y, box_width, 8, (unsigned char)r, (unsigned char)g, (unsigned char)b);
+		client::DrawFillRect((void*)0, 0, y, box_width, 8, (unsigned char)r, (unsigned char)g, (unsigned char)b);
 #else
 		QWORD sdl_window_data = cs2::sdl::get_window_data(sdl_window);
 		if (sdl_window_data == 0)
@@ -1214,7 +1218,7 @@ static void cs2::features::render_normal_position(vec3 pos, int width, int heigh
 	}
 
 #ifdef __linux__
-	client::DrawfillRect((void*)0, x, y, box_width, box_height, (unsigned char)r, (unsigned char)g, (unsigned char)b);
+	client::DrawFillRect((void*)0, x, y, box_width, box_height, (unsigned char)r, (unsigned char)g, (unsigned char)b);
 #else
 	QWORD sdl_window_data = cs2::sdl::get_window_data(sdl_window);
 	if (sdl_window_data == 0)
